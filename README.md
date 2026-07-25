@@ -1,6 +1,6 @@
 # Python Shell 🐍
 
-Una consola interactiva hecha en Python que simula co>
+Una consola interactiva hecha en Python que simula comandos básicos de una shell de Linux/Bash.
 En estado Beta
 
 ## Características
