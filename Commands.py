@@ -116,8 +116,17 @@ ruta/relativa
             
     def mkdir(self, path_name):
         print(f'mkdir {path_name}')
+        
         try:
-           if os.path.isdir(os.path.join(os.getenv('PY_CURRENT_PATH'), path_name)):
+            
+           if path_name == "--help":
+               print("""
+            mkdir: Este comando crea una carpeta en el directorio actual,
+            uso: mkdir <nombre de la carpeta>,
+            mkdir --help: muestra este mensaje.
+               """) 
+            
+           elif os.path.isdir(os.path.join(os.getenv('PY_CURRENT_PATH'), path_name)):
                print("Carpeta ya existe")
            else:  
                os.mkdir(os.path.join(os.getenv('PY_CURRENT_PATH') ,path_name))
@@ -127,7 +136,15 @@ ruta/relativa
     def touch(self, file_name):
         print(f'touch {file_name}')
         try:
-            if os.path.isfile(os.path.join(os.getenv('PY_CURRENT_PATH'), file_name)):
+            
+            if file_name == "--help":
+                print("""
+                   touch: este comando crea un archivo,
+                   uso: touch <nombre de archivo> ,
+                   --help: muestra este mensaje
+                """)
+            
+            elif os.path.isfile(os.path.join(os.getenv('PY_CURRENT_PATH'), file_name)):
                 print("Archivo ya existe")
             else:    
                 with open(os.path.join(os.getenv('PY_CURRENT_PATH') ,file_name), 'w') as file:
