@@ -18,7 +18,7 @@ class Commands:
             'mkdir': self.mkdir,
             '--help': self.help,
             'touch': self.touch,
-            'exit': lambda:self.Running = False
+            'exit': self.exit
         }
         
                 
@@ -30,6 +30,11 @@ class Commands:
 Esto es una consola de comandos basada en shell the bash con comandos 
 simples y utiles de los cuales disponibles ya están {self.command_list}        
         """)    
+        
+    #COMANDO exist
+    
+    def exit(self):
+        self.Running = False
         
         
     #COMANDO LS    
